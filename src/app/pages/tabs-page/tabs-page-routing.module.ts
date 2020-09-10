@@ -58,6 +58,15 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'messages',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../messages/messages.module').then(m => m.MessagesPageModule)
+          }
+        ]
+      },
+      {
         path: '',
         redirectTo: '/app/tabs/schedule',
         pathMatch: 'full'

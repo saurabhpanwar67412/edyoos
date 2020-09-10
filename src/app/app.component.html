@@ -3,9 +3,12 @@
 
     <ion-menu contentId="main-content">
       <ion-content>
-        <ion-list lines="none">
+       <ion-list-header>
+            Edyoos
+          </ion-list-header>
+ <!--        <ion-list lines="none">
           <ion-list-header>
-            Conference
+            Edyoos Parking
           </ion-list-header>
           <ion-menu-toggle autoHide="false" *ngFor="let p of appPages; let i = index">
             <ion-item [routerLink]="p.url" routerLinkActive="selected" routerDirection="root" detail="false">
@@ -17,7 +20,7 @@
 
           </ion-menu-toggle>
         </ion-list>
-
+-->
         <ion-list *ngIf="loggedIn" lines="none">
           <ion-list-header>
             Account

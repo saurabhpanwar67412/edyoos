@@ -1,4 +1,27 @@
+<ion-header no-border>
+  <ion-toolbar no-border>
+      <ion-buttons  slot="start">
+          <ion-button [routerLink]="['/']"  >
+            <ion-icon mode="ios" color="primary" slot="icon-only" name="arrow-back"></ion-icon>
+         </ion-button>
+      </ion-buttons>
+    <ion-title  mode="ios" color="primary">Checkout</ion-title>
+
+    
+
+
+  </ion-toolbar>
+</ion-header>
+
 <ion-content>
+
+<p style="
+    margin-left: 84px;
+    font-size: 20px;
+    margin-top: 386px;
+">No Cart Items Available </p>
+<!-- 
+  <h2>No Cart Items Available </h2>
   <ion-header class="ion-no-border">
     <ion-toolbar>
       <ion-buttons slot="start">
@@ -14,14 +37,14 @@
 
   <div class="about-header">
     <!-- Instead of loading an image each time the select changes, use opacity to transition them -->
-    <div class="about-image madison" [ngStyle]="location === 'madison' && {'opacity': '1'}"></div>
+   <!--  <div class="about-image madison" [ngStyle]="location === 'madison' && {'opacity': '1'}"></div>
     <div class="about-image austin" [ngStyle]="location === 'austin' && {'opacity': '1'}"></div>
     <div class="about-image chicago" [ngStyle]="location === 'chicago' && {'opacity': '1'}"></div>
     <div class="about-image seattle" [ngStyle]="location === 'seattle' && {'opacity': '1'}"></div>
   </div>
 
   <div class="about-info">
-    <h3 class="ion-padding-top ion-padding-start">About</h3>
+    <h3 class="ion-padding-top ion-padding-start">Checkout</h3>
 
     <p class="ion-padding-start ion-padding-end">
       The Ionic Conference is a one-day conference on {{ conferenceDate | date: 'mediumDate' }} featuring talks from the Ionic team. It is focused on Ionic applications being built with Ionic Framework. This includes migrating apps to the latest version of the framework, Angular concepts, Webpack, Sass, and many other technologies used in Ionic 2. Tickets are completely sold out, and we’re expecting more than 1000 developers – making this the largest Ionic conference ever!
@@ -73,5 +96,5 @@
         </ion-label>
       </ion-item>
     </ion-list>
-  </div>
+  </div> -->
 </ion-content>

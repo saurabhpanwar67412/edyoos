@@ -5,6 +5,7 @@ import { AlertController, IonList, IonRouterOutlet, LoadingController, ModalCont
 import { ScheduleFilterPage } from '../schedule-filter/schedule-filter';
 import { ConferenceData } from '../../providers/conference-data';
 import { UserData } from '../../providers/user-data';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 @Component({
   selector: 'page-schedule',
@@ -24,6 +25,8 @@ export class SchedulePage implements OnInit {
   groups: any = [];
   confDate: string;
   showSearchbar: boolean;
+  lat;
+  lng;
 
   constructor(
     public alertCtrl: AlertController,
@@ -34,8 +37,31 @@ export class SchedulePage implements OnInit {
     public routerOutlet: IonRouterOutlet,
     public toastCtrl: ToastController,
     public user: UserData,
-    public config: Config
+    public config: Config,
+    private geolocation: Geolocation
   ) { }
+
+  getCurrentLocation(){
+    this.geolocation.getCurrentPosition(
+      {maximumAge: 1000, timeout: 5000,
+       enableHighAccuracy: true }
+      ).then((resp) => {
+            // resp.coords.latitude
+            // resp.coords.longitude
+            //alert("r succ"+resp.coords.latitude)
+            alert(JSON.stringify( resp.coords));
+      
+            this.lat=resp.coords.latitude
+            this.lng=resp.coords.longitude
+            },er=>{
+              //alert("error getting location")
+              alert('Can not retrieve Location')
+            }).catch((error) => {
+            //alert('Error getting location'+JSON.stringify(error));
+            alert('Error getting location - '+JSON.stringify(error))
+            });
+
+  }
 
   ngOnInit() {
     this.updateSchedule();

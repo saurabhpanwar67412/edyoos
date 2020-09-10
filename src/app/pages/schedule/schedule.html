@@ -16,7 +16,9 @@
     <ion-buttons slot="end">
       <ion-button *ngIf="!ios && !showSearchbar" (click)="showSearchbar = true">
         <ion-icon slot="icon-only" name="search"></ion-icon>
-      </ion-button>
+      </ion-button> 
+      
+      
       <ion-button *ngIf="!showSearchbar" (click)="presentFilter()">
         <span *ngIf="ios">Filter</span>
         <span *ngIf="!ios">
@@ -40,13 +42,25 @@
 <ion-content fullscreen="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Schedule</ion-title>
+      <ion-title size="medium">Find Parking</ion-title>
     </ion-toolbar>
     <ion-toolbar>
       <ion-searchbar [(ngModel)]="queryText" (ionChange)="updateSchedule()" placeholder="Search"></ion-searchbar>
+   <ion-button (click)="getCurrentLocation()">
+   <ion-icon name="locate-outline" > </ion-icon>
+    <span *ngIf="ios">Use your current location</span>
+        <span *ngIf="!ios">
+   
+        </span>
+      </ion-button>
+     
+     
+
     </ion-toolbar>
   </ion-header>
+<br><br><br>
 
+<!-- 
   <ion-list #scheduleList [hidden]="shownSessions === 0">
     <ion-item-group *ngFor="let group of groups" [hidden]="group.hide">
       <ion-item-divider sticky>
@@ -77,7 +91,7 @@
       </ion-item-sliding>
     </ion-item-group>
   </ion-list>
-
+-->
   <ion-list-header [hidden]="shownSessions > 0">
     No Sessions Found
   </ion-list-header>
