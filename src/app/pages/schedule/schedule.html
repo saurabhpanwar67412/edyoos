@@ -13,6 +13,7 @@
     </ion-segment>
     <ion-title *ngIf="!ios && !showSearchbar">Schedule</ion-title>
     <ion-searchbar *ngIf="showSearchbar" showCancelButton="always" [(ngModel)]="queryText" (ionChange)="updateSchedule()" (ionCancel)="showSearchbar = false" placeholder="Search" (ionFocus)="showCurrentLocation = true" (ionBlur)="showSearchbar = false;showCurrentLocation = false"></ion-searchbar>
+
     <ion-buttons slot="end">
       <ion-button *ngIf="!ios && !showSearchbar" (click)="showSearchbar = true">
         <ion-icon slot="icon-only" name="search"></ion-icon>
@@ -27,6 +28,7 @@
       </ion-button>
     </ion-buttons>
     <ion-button *ngIf="showCurrentLocation">Use current location</ion-button>
+
   </ion-toolbar>
   <ion-toolbar *ngIf="!ios">
     <ion-segment [(ngModel)]="segment" (ionChange)="updateSchedule()">
