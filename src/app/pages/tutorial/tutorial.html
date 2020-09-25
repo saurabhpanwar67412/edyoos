@@ -1,0 +1,52 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button color='primary' (click)="startApp()" [hidden]="!showSkip">Skip</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <ion-slides #slides (ionSlideWillChange)="onSlideChangeStart($event)" pager="false">
+    <ion-slide>
+      <img src="assets/img/edyoos-logo.svg" class="slide-image" />
+      <h1 class="slide-title">
+        Welcome to
+        <b>Edyoos</b>
+      </h1>
+      <p>
+        The
+        <b>Edyoos</b> Edyoos facilitates the ability to select the exact parking space before arriving at your business.
+During peak hours parking can become a nightmare! Edyoos handles everything, you do not have to worry about anything.
+      </p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/img/ica-slidebox-img-2.png" class="slide-image" />
+      <h2 class="slide-title">How we works</h2>
+      <br>
+        <h2>Find</h2> <br> 
+        <h2>Compare</h2> <br>
+        <h2>Park</h2>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/img/ica-slidebox-img-3.png" class="slide-image" />
+      <h2 class="slide-title">Why Edyoos ? </h2>
+      <br>
+        <h2>Reduce</h2> <br> 
+        <h2>Create</h2> <br>
+        <h2>Eliminate</h2><br>
+        <h2>Raise</h2> <br>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/img/ica-slidebox-img-4.png" class="slide-image" />
+      <h2 class="slide-title">Ready to Book?</h2>
+      <ion-button fill="clear" (click)="startApp()">
+        Continue
+        <ion-icon slot="end" name="arrow-forward"></ion-icon>
+      </ion-button>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
