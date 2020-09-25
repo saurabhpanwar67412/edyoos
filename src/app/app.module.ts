@@ -13,6 +13,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { FormsModule } from '@angular/forms';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
 
 @NgModule({
   imports: [
@@ -27,7 +28,7 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
     })
   ],
   declarations: [AppComponent],
-  providers: [InAppBrowser, SplashScreen, StatusBar,Geolocation],
+  providers: [InAppBrowser, SplashScreen, StatusBar,Geolocation,NativeGeocoder],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
